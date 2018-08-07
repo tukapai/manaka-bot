@@ -13,9 +13,9 @@ module.exports = (robot) ->
   robot.hear /おはよう/i, (res) ->
     res.send "おっす、おはよう😊"
 
-  robot.hear /badger/i, (res) ->
-    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-  
+  robot.hear /今日もいい天気だね/i, (res) ->
+    res.send "そうだね、今日も一日頑張ろう😄"
+
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
