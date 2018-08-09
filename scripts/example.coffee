@@ -16,12 +16,12 @@ module.exports = (robot) ->
   robot.hear /今日もいい天気だね/i, (res) ->
     res.send "そうだね、今日も一日頑張ろう😄"
 
-  # robot.respond /open the (.*) doors/i, (res) ->
-  #   doorType = res.match[1]
-  #   if doorType is "pod bay"
-  #     res.reply "I'm afraid I can't let you do that."
-  #   else
-  #     res.reply "Opening #{doorType} doors"
+  robot.respond /open the (.*) doors/i, (res) ->
+    doorType = res.match[1]
+    if doorType is "pod bay"
+      res.reply "I'm afraid I can't let you do that."
+    else
+      res.reply "Opening #{doorType} doors"
   #
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
