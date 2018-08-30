@@ -11,10 +11,14 @@
 module.exports = (robot) ->
 
   robot.hear /おはよう/i, (res) ->
-    res.send "おっす、おはよう😊"
+    res.send "おはよう😊"
 
   robot.hear /今日もいい天気だね/i, (res) ->
     res.send "そうだね、今日も一日頑張ろう😄"
+
+  robot.hear /今日の運勢は？/i, (res) ->
+    lulz = ['大吉', '中吉', '小吉']
+    res.send "今日の運勢は"　res.random lulz　"だよ！"
 
   robot.respond /open the (.*) doors/i, (res) ->
     doorType = res.match[1]
