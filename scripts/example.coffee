@@ -17,15 +17,13 @@ module.exports = (robot) ->
     res.send "そうだね、今日も一日頑張ろう😄"
 
   robot.hear /今日の運勢は？/i, (res) ->
-    lulz = ['大吉', '中吉', '小吉']
-    res.send "今日の運勢は"　res.random lulz　"だよ！"
+    luck = ['大吉', '中吉', '小吉']
+    res.send "今日の運勢は"　res.random luck　"だよ！"
 
-  robot.respond /open the (.*) doors/i, (res) ->
-    doorType = res.match[1]
-    if doorType is "pod bay"
-      res.reply "I'm afraid I can't let you do that."
-    else
-      res.reply "Opening #{doorType} doors"
+  robot.respond /(.*) ++/i, (res) ->
+    user_name = res.match[1]
+    chearup = ['すばらしい！', 'すごい', 'いいね']
+      res.reply res.random chearup
   #
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
