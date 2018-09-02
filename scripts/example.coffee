@@ -24,6 +24,8 @@ module.exports = (robot) ->
     user_name = res.match[1]
     chearup = ['すばらしい！', 'すごい', 'いいね']
       res.reply res.random chearup
+
+      
   #
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
