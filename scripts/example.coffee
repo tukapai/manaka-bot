@@ -22,10 +22,14 @@ module.exports = (robot) ->
 
   robot.respond /(.*) ++/i, (res) ->
     user_name = res.match[1]
-    chearup = ['すばらしい！', 'すごい', 'いいね']
+    happy = ['すばらしい！', 'すごい', 'いいね']
+      res.reply res.random happy
+
+  robot.respond /(.*) --/i, (res) ->
+    user_name = res.match[1]
+    chearup = ['頑張って！', '負けないで！', 'まだ戦えるよ！']
       res.reply res.random chearup
 
-      
   #
   # robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
