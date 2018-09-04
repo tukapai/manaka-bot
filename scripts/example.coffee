@@ -30,9 +30,8 @@ module.exports = (robot) ->
     chearup = ['頑張って！', '負けないで！', 'まだ戦えるよ！']
       res.reply res.random chearup
 
-  #
-  # robot.hear /I like pie/i, (res) ->
-  #   res.emote "makes a freshly baked pie"
+  robot.hear /I like pie/i, (res) ->
+    res.emote "makes a freshly baked pie"
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
