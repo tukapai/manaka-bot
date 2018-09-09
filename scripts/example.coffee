@@ -8,33 +8,9 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-module.exports = (robot) ->
-
-  robot.hear /おはよう/i, (res) ->
-    res.send "おはよう😊"
-
-  robot.hear /今日もいい天気だね/i, (res) ->
-    res.send "そうだね、今日も一日頑張ろう😄"
-
-  robot.hear /今日の運勢は？/i, (res) ->
-    luck = ['大吉', '中吉', '小吉']
-    res.send "今日の運勢は"　res.random luck　"だよ！"
-
-  robot.respond /(.*) ++/i, (res) ->
-    user_name = res.match[1]
-    happy = ['すばらしい！', 'すごい', 'いいね']
-      res.reply res.random happy
-
-  robot.respond /(.*) --/i, (res) ->
-    user_name = res.match[1]
-    chearup = ['頑張って！', '負けないで！', 'まだ戦えるよ！']
-      res.reply res.random chearup
-
-  robot.hear /I like pie/i, (res) ->
-    res.emote "makes a freshly baked pie"
 
 
-    
+
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
