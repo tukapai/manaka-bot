@@ -24,4 +24,4 @@ module.exports = (robot) ->
   TODO:ランダム格言するBotを探す
 
   robot.hear /ランダム格言/i, (res) ->
-    res.emote "makes a freshly baked pie"
+    res.emote "いま準備中！"
