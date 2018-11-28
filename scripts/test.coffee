@@ -13,9 +13,9 @@
 #
 # Notes:
 #   this is an example code for hubot-script.
-# 
+#
 # Author: tukapai
-#   
+#
 
 
 module.exports = (robot) ->
@@ -44,6 +44,17 @@ module.exports = (robot) ->
 
   robot.hear /ランダム格言/i, (res) ->
     res.emote "いま準備中！"
+
+  robot.hear /^(.+)\+\+$/i, (msg) ->
+    user = msg.match[1]
+
+    if not robot.brain.data[user]
+      robot.brain.data[user] = 0
+
+    robot.brain.data[user]++
+    robot.brain.save()
+
+    msg.send robot.brain.data[user]
 
 
 
