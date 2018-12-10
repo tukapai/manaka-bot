@@ -45,6 +45,7 @@ module.exports = (robot) ->
   robot.hear /ランダム格言/i, (res) ->
     res.emote "いま準備中！"
 
+ #　いいねってしたら＋1カウントするやつ
   robot.hear /^(.+)\+\+$/i, (msg) ->
     user = msg.match[1]
 
@@ -56,13 +57,29 @@ module.exports = (robot) ->
 
     msg.send robot.brain.data[user]
 
+  # genarate asciime
   robot.respond /ascii( me)? (.+)/i, (msg) ->
     msg
       .http("http://asciime.herokuapp.com/generate_ascii")
       .query(s: msg.match[2].split(' ').join('  '))
       .get() (err, res, body) ->
         msg.send body
-        
+
+ # 今日何曜日だっけに答えてくれるやつ
+   robot.respond　/今日は何曜日？/i => {
+
+    request.get({
+      url: 'http://api.sekido.info/qreki?output=json',
+      headers: {
+        'User-Agent': 'Hubot'
+      }
+    }, (err, res, body) => {
+        let parsedBody = JSON.parse(body);
+        console.log(parsedBody.rokuyou_text);
+        msg.send(`今日は${JSON.parse(body).rokuyou_text}です`);
+    });
+  });
+
 
   # hearするとチャットルームのメッセージを監視できる
   # チャットルームで hoge って打ち込むと huga って返す
@@ -87,7 +104,6 @@ module.exports = (robot) ->
         # 返ってきた値を使って何かする
         msg.send "#{res.data}"
       .post(data) (err, res, body) ->
-        # 
         
   # key score sample
   KEY_SCORE = 'key_score'
@@ -119,3 +135,4 @@ module.exports = (robot) ->
     name = msg.match[1]
     new_score = changeScore(name, -1)
     msg.send "#{name}: #{new_score}"
+
