@@ -81,15 +81,6 @@ module.exports = (robot) ->
   });
 
 
-  # hearするとチャットルームのメッセージを監視できる
-  # チャットルームで hoge って打ち込むと huga って返す
-  # msgオブジェクトの中にはuserNameとかが入ってて、メンション飛ばせたりする
-  robot.hear /jojo/i, (msg) ->
-    msg.send 'の奇妙な冒険'
-    msg.send "@#{msg.message.user.name}, foo bar."
-    # reply使うとメッセージを送ったユーザーにリプライできるっぽい
-    msg.reply 'foooo'
-
   # respondすると hubot search `something` のようにhubotに命令できる
   # http (get, post) もできたりするので組み合わせると面白いかも
   robot.respond /search (.*)/i, (msg) ->
@@ -104,7 +95,7 @@ module.exports = (robot) ->
         # 返ってきた値を使って何かする
         msg.send "#{res.data}"
       .post(data) (err, res, body) ->
-        
+
   # key score sample
   KEY_SCORE = 'key_score'
 
@@ -135,4 +126,3 @@ module.exports = (robot) ->
     name = msg.match[1]
     new_score = changeScore(name, -1)
     msg.send "#{name}: #{new_score}"
-
