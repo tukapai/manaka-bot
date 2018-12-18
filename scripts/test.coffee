@@ -44,6 +44,15 @@ module.exports = (robot) ->
 
   robot.hear /ランダム格言/i, (res) ->
     res.emote "いま準備中！"
+    
+# 煽りたい時に使うやつ    
+popteamepic = [
+ "https://i.imgur.com/8pIayDj.gifv",
+ "https://i.imgur.com/ZGRtDpR.png",
+ "https://i.imgur.com/CP6PxrV.jpg"
+]
+  robot.hear /ポプ子/i, (msg) ->
+    msg.send msg.random popteamepic
 
  #　いいねってしたら＋1カウントするやつ
   robot.hear /^(.+)\+\+$/i, (msg) ->
