@@ -44,8 +44,8 @@ module.exports = (robot) ->
 
   robot.hear /ランダム格言/i, (res) ->
     res.emote "いま準備中！"
-    
-# 煽りたい時に使うやつ    
+
+# 煽りたい時に使うやつ
 popteamepic = [
  "https://i.imgur.com/8pIayDj.gifv",
  "https://i.imgur.com/ZGRtDpR.png",
@@ -135,3 +135,9 @@ popteamepic = [
     name = msg.match[1]
     new_score = changeScore(name, -1)
     msg.send "#{name}: #{new_score}"
+
+  #今日の天気は機能
+  #今日の天気は？と聞くと東京の天気を返してくれるやつを作る(APIのサンプル)
+  #api = "http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={key}"
+  robot.respond /list/i, (msg) ->
+   msg.send "今日の天気は##{天気データ}だよ"
