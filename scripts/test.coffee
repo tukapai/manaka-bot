@@ -140,4 +140,6 @@ popteamepic = [
   #今日の天気は？と聞くと東京の天気を返してくれるやつを作る(APIのサンプル)
   #api = "http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={key}"
   robot.respond /list/i, (msg) ->
+     robot.http("http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={key}")
+    .get() (err, res, body) ->
    msg.send "今日の天気は##{天気データ}だよ"
