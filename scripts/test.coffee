@@ -43,7 +43,12 @@ module.exports = (robot) ->
   TODO:ランダム格言するBotを探す
 
   robot.hear /ランダム格言/i, (res) ->
-    res.emote "いま準備中！"
+       request.get({
+         url: 'http://www.meigensyu.com/quotations/view/random',
+         headers: {
+           'User-Agent': 'Hubot'
+         }
+    res.send "いま準備中！"
 
 # 煽りたい時に使うやつ
 popteamepic = [
@@ -73,7 +78,7 @@ popteamepic = [
       .query(s: msg.match[2].split(' ').join('  '))
       .get() (err, res, body) ->
         msg.send body
-
+#http://www.meigensyu.com/quotations/view/random
  # 今日何曜日だっけに答えてくれるやつ
    robot.respond　/今日は何曜日？/i => {
 
