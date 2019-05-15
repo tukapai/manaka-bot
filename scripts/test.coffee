@@ -155,6 +155,10 @@ popteamepic = [
 
 var fs = require('fs');
 
+robot.respond /私の名前は？/i, (msg) ->
+  msg.send "あなたは#{msg.message.user.name}だよね"
+  
+  
 # teregram
 # module.exports = function (robot) {
 #
