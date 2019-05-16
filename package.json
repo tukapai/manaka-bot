@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "author": "Masashi Otsuka <masashi1029xxx@gmail.com>",
-  "description": "she is so cute!!",
+  "description": "she is so cute",
   "dependencies": {
     "hubot": "^3.3.2",
     "hubot-diagnostics": "^1.0.0",
@@ -17,11 +17,9 @@
     "hubot-rules": "^1.0.0",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.1",
-    "hubot-slack": "^4.7.1",
-    "update-notifier": "^3.0.0"
+    "hubot-slack": "^4.7.1"
   },
   "engines": {
-    "node": "11.3.x",
-    "npm": "6.9.x"
+    "node": "0.10.x"
   }
 }
