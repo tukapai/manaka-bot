@@ -18,16 +18,26 @@
 #
 luck = ['大吉', '中吉', '小吉']
 
+popteamepic = [
+ "https://i.imgur.com/8pIayDj.gifv",
+ "https://i.imgur.com/ZGRtDpR.png",
+ "https://i.imgur.com/CP6PxrV.jpg"
+]
+
 module.exports = (robot) ->
 
-  robot.hear /おはよう/i, (res) ->
-    res.send "おはよう😊"
+  robot.respond /おはよう/i, (res) ->
+    res.reply "おはよう😊"
 
-  robot.hear /今日もいい天気だね/i, (res) ->
-    res.send "そうだね、今日も一日頑張ろう😄"
+  robot.respond /今日もいい天気だね/i, (res) ->
+    res.reply "そうだね、今日も一日頑張ろう😄"
 
-  robot.hear /今日の運勢は？/i, (res) ->
+  robot.respond /今日の運勢は？/i, (res) ->
     res.send "今日の運勢は#{res.random luck} だよ！"
+
+  robot.hear /ポプ子/i, (msg) ->
+    msg.send msg.random popteamepic
+
 #
 #   robot.respond /(.*) ++/i, (res) ->
 #     user_name = res.match[1]
