@@ -183,5 +183,5 @@ m_talk = [ '「326はミツル。では320は？･･････はい”み�
 
 module.exports = (robot) ->
 
-  robot.hear /ランダムデバッグ/i, (res) ->
-    res.send res.random m_talk
+  robot.respond /ランダムデバッグ/i, (res) ->
+    res.reply res.random m_talk
