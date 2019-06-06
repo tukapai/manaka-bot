@@ -1,1 +1,1 @@
-web: HUBOT_SLACK_TOKEN=$HUBOT_SLACK_TOKEN bin/hubot -a slack -n manaka-bot
+Web: bin/hubot -a slack -n manaka-bot
